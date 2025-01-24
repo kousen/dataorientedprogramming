@@ -9,7 +9,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.stream.Stream;
 
 import static com.kousenit.ollama.OllamaRecords.*;
 
@@ -107,45 +106,5 @@ public class OllamaService {
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public String generateStreamingResponse(OllamaTextRequest ollamaRequest) {
-        try (var client = HttpClient.newHttpClient()) {
-            var requestBody = gson.toJson(ollamaRequest);
-            var httpRequest = HttpRequest.newBuilder()
-                    .uri(URI.create(URL + "/api/generate"))
-                    .header("Content-Type", "application/json")
-                    .POST(HttpRequest.BodyPublishers.ofString(requestBody))
-                    .build();
-
-            var responseFuture = client.sendAsync(
-                            httpRequest,
-                            HttpResponse.BodyHandlers.ofLines())
-                    .thenApply(this::handleLines);
-
-            return responseFuture.join();
-        } catch (Exception e) {
-            System.err.println("Error generating streaming response: " + e.getMessage());
-            return "";
-        }
-    }
-
-    private String handleLines(HttpResponse<Stream<String>> response) {
-        var accumulatedResponse = new StringBuilder();
-        response.body().forEach(line -> {
-            try {
-                var ollamaResponse = gson.fromJson(line, OllamaResponse.class);
-                System.out.print(ollamaResponse.response());
-                accumulatedResponse.append(ollamaResponse.response());
-
-                if (ollamaResponse.done()) {
-                    System.out.println();
-                    System.out.println("Final response metadata: " + line);
-                }
-            } catch (Exception e) {
-                System.err.println("Error processing JSON: " + e.getMessage());
-            }
-        });
-        return accumulatedResponse.toString();
     }
 }

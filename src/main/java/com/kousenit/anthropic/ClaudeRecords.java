@@ -16,7 +16,7 @@ public class ClaudeRecords {
 
     public sealed interface Message
             permits SimpleMessage, TextMessage, MixedContent {
-        String role();
+        //String role();
     }
 
     // Message implementations:
@@ -28,7 +28,7 @@ public class ClaudeRecords {
 
     public sealed interface Content
             permits TextContent, ImageContent {
-        String type();
+        //String type();
     }
 
     // Content implementations:
