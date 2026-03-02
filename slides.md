@@ -40,9 +40,9 @@ Kousen IT, Inc.
 [ken.kousen@kousenit.com](mailto:ken.kousen@kousenit.com)<br/>
 [kousenit.com](http://www.kousenit.com)<br/>
 [kousenit.org](https://kousenit.org) (blog)<br/>
-[@kenkousen](https://twitter.com/kenkousen)<br/>
-[foojay.social/@kenkousen](https://foojay.social/@kenkousen)<br/>
-[bsky.app/profile/kousenit.com](https://bsky.app/profile/kousenit.com)
+[bsky.app/profile/kousenit.com](https://bsky.app/profile/kousenit.com)<br/>
+[linkedin.com/in/kenkousen](https://www.linkedin.com/in/kenkousen/)<br/>
+[foojay.social/@kenkousen](https://foojay.social/@kenkousen)
 
 </div>
 
@@ -636,6 +636,61 @@ Plugin systems, frameworks, extensible type hierarchies where users add implemen
 
 <div style="padding: 0.8em; background: rgba(56, 189, 248, 0.15); border-radius: 8px; border: 2px solid #38bdf8; text-align: center;">
 <span style="color: #bae6fd; font-size: 1.05em;">This is the <strong>expression problem</strong> (Philip Wadler, 1998). DOP and OOP are complementary tools for different shapes of problem.</span>
+</div>
+
+</v-click>
+
+---
+background: 'linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%)'
+---
+
+## <span style="color: #fbbf24;">Where DOP Is Headed: Carrier Classes</span>
+
+<div style="font-size: 0.9em;">
+
+<v-clicks>
+
+<div style="background: rgba(251, 191, 36, 0.1); padding: 0.7em; border-radius: 8px; margin: 0.5em 0;">
+<strong style="color: #fbbf24;">First arc (what we just covered):</strong> Records + sealed interfaces + pattern matching
+</div>
+
+<div style="background: rgba(56, 189, 248, 0.1); padding: 0.7em; border-radius: 8px; margin: 0.5em 0;">
+<strong style="color: #38bdf8;">Second arc, coming next:</strong> <strong>Carrier classes</strong> — like a record but drops the commitment that representation must match the state description. Can have mutable fields, derived/cached state, representation that differs from the API.
+</div>
+
+</v-clicks>
+
+<v-click>
+
+```java
+class Point(int x, int y) {   // class, not record!
+    private component int x;   // new keyword: component
+    private component int y;
+    // accessors, equals, hashCode, toString all derived!
+}
+```
+
+</v-click>
+
+<v-click>
+
+<div style="background: rgba(52, 211, 153, 0.1); padding: 0.7em; border-radius: 8px; margin: 0.5em 0;">
+<strong style="color: #34d399;">With expressions</strong> (JEP 468) — finally arriving for records, and carrier classes too:
+</div>
+
+```java
+point = point with { x = 3; };   // non-destructive transformation
+```
+
+</v-click>
+
+</div>
+
+<v-click>
+
+<div style="margin-top: 0.5em; padding: 0.8em; background: rgba(251, 191, 36, 0.15); border-radius: 8px; border: 2px solid #f59e0b; text-align: center;">
+<span style="color: #fde68a; font-size: 1.05em;">Java is fully committed to the DOP model. The trajectory is clear.</span><br/>
+<span style="color: #94a3b8; font-size: 0.85em;">— Brian Goetz, <a href="https://mail.openjdk.org/pipermail/amber-spec-experts/2026-February/004351.html" style="color: #38bdf8;"><em>Data Oriented Programming, Beyond Records</em></a>, Feb 2026</span>
 </div>
 
 </v-click>
