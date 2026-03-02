@@ -26,7 +26,7 @@ class ClaudeServiceTest {
                     """;
             var response = claudeService.chat(
                     new ClaudeMessageRequest(
-                            ClaudeService.CLAUDE_35_HAIKU,
+                            ClaudeService.CLAUDE_HAIKU,
                             "",
                             1024,
                             0.7,
@@ -42,7 +42,7 @@ class ClaudeServiceTest {
                     with AI tools.
                     """;
             var response = claudeService.chat(new ClaudeMessageRequest(
-                    ClaudeService.CLAUDE_35_SONNET,
+                    ClaudeService.CLAUDE_SONNET,
                     "",
                     1024,
                     0.7,
@@ -58,7 +58,7 @@ class ClaudeServiceTest {
                     with AI tools.
                     """;
             var response = claudeService.chat(new ClaudeMessageRequest(
-                    ClaudeService.CLAUDE_3_OPUS,
+                    ClaudeService.CLAUDE_OPUS,
                     "",
                     1024,
                     0.7,
@@ -75,7 +75,7 @@ class ClaudeServiceTest {
         String encodedImage = encodeImage(
                 "src/main/resources/%s".formatted(imageFileName));
         var request = new ClaudeMessageRequest(
-                ClaudeService.CLAUDE_35_SONNET,
+                ClaudeService.CLAUDE_SONNET,
                 "",
                 1024,
                 0.7,
@@ -96,7 +96,7 @@ class ClaudeServiceTest {
                 written in pirate speak.
                 """;
         var response = claudeService.chat(new ClaudeMessageRequest(
-                ClaudeService.CLAUDE_35_HAIKU,
+                ClaudeService.CLAUDE_HAIKU,
                 "",
                 1024,
                 0.3,

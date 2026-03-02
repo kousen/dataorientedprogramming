@@ -16,9 +16,9 @@ import static com.kousenit.anthropic.ClaudeRecords.ClaudeMessageResponse;
 public class ClaudeService {
     private static final String API_KEY = System.getenv("ANTHROPIC_API_KEY");
 
-    public final static String CLAUDE_35_HAIKU = "claude-3-5-haiku-latest";
-    public final static String CLAUDE_35_SONNET = "claude-3-5-sonnet-latest";
-    public final static String CLAUDE_3_OPUS = "claude-3-opus-latest";
+    public final static String CLAUDE_HAIKU = "claude-haiku-4-5-20251001";
+    public final static String CLAUDE_SONNET = "claude-sonnet-4-6";
+    public final static String CLAUDE_OPUS = "claude-opus-4-6";
 
 
     private final Gson gson = new GsonBuilder()
