@@ -27,7 +27,7 @@ class OllamaServiceTest {
 
     @Test
     void generate_with_vision_request() {
-        var request = new OllamaVisionRequest("llama3.2-vision",
+        var request = new OllamaVisionRequest("qwen3.5:latest",
                 """
                 What company is building the robot shown in the image?
                 Can you tell me anything about it?
@@ -42,7 +42,7 @@ class OllamaServiceTest {
     @Test
     void generate_with_model_and_name() {
         var ollamaResponse = service.generate(
-                "phi4", "Why is the sky blue?");
+                "qwen3.5", "Why is the sky blue?");
         String answer = ollamaResponse.response();
         System.out.println(answer);
         assertTrue(answer.contains("scattering"));
@@ -51,14 +51,14 @@ class OllamaServiceTest {
     @Test
     public void streaming_request() {
         var request = new OllamaTextRequest(
-                "phi4", "Why is the sky blue?", true);
+                "qwen3.5", "Why is the sky blue?", true);
         String response = service.generateStreaming(request);
         System.out.println(response);
     }
 
     @Test
     void test_vision_request() {
-        var request = new OllamaVisionRequest("llava-llama3",
+        var request = new OllamaVisionRequest("qwen3.5:latest",
                 """
                 My company (logo in the image) is building
                 the robot shown and wants me to embed an
