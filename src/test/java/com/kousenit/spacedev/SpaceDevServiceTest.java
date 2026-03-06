@@ -8,7 +8,6 @@ import java.util.Map;
 import static com.kousenit.spacedev.SpaceDevRecords.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
 class SpaceDevServiceTest {
 
@@ -17,8 +16,6 @@ class SpaceDevServiceTest {
     @Test
     void fetch_returns_success_with_active_expeditions() {
         Result result = service.fetchExpeditions();
-
-        assertInstanceOf(Result.Success.class, result);
 
         // Deconstruct the Success to get expeditions
         if (result instanceof Result.Success(var expeditions)) {

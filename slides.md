@@ -36,28 +36,32 @@ background: 'linear-gradient(to bottom right, #1a1a2e, #0f3460)'
 Kousen IT, Inc.
 
 <div style="margin-top: 0.8em; line-height: 2;">
-
-[ken.kousen@kousenit.com](mailto:ken.kousen@kousenit.com)<br/>
-[kousenit.com](http://www.kousenit.com)<br/>
-[kousenit.org](https://kousenit.org) (blog)<br/>
-[bsky.app/profile/kousenit.com](https://bsky.app/profile/kousenit.com)<br/>
-[linkedin.com/in/kenkousen](https://www.linkedin.com/in/kenkousen/)<br/>
-[foojay.social/@kenkousen](https://foojay.social/@kenkousen)
-
+<a href="mailto:ken.kousen@kousenit.com" style="color: #38bdf8;">ken.kousen@kousenit.com</a><br/>
+<a href="http://www.kousenit.com" style="color: #38bdf8;">kousenit.com</a><br/>
+<a href="https://kousenit.org" style="color: #38bdf8;">kousenit.org</a> (blog)<br/>
+<a href="https://bsky.app/profile/kousenit.com" style="color: #38bdf8;">bsky.app/profile/kousenit.com</a><br/>
+<a href="https://www.linkedin.com/in/kenkousen/" style="color: #38bdf8;">linkedin.com/in/kenkousen</a><br/>
+<a href="https://foojay.social/@kenkousen" style="color: #38bdf8;">foojay.social/@kenkousen</a>
 </div>
 
 <div style="margin-top: 0.8em;">
 <em>Tales from the jar side</em> (free newsletter)<br/>
-[kenkousen.substack.com](https://kenkousen.substack.com)<br/>
-[youtube.com/@talesfromthejarside](https://youtube.com/@talesfromthejarside)
+<a href="https://kenkousen.substack.com" style="color: #38bdf8;">kenkousen.substack.com</a><br/>
+<a href="https://youtube.com/@talesfromthejarside" style="color: #38bdf8;">youtube.com/@talesfromthejarside</a>
 </div>
 
 </div>
 
 <div style="font-size: 0.9em;">
-
-Books: *Help Your Boss Help You*, *Kotlin Cookbook*, *Modern Java Recipes*, *Mockito Made Clear*, *Gradle Recipes for Android*, *Making Java Groovy*
-
+<div style="line-height: 1.8;">
+<strong>Books:</strong><br/>
+<em>Help Your Boss Help You</em><br/>
+<em>Kotlin Cookbook</em><br/>
+<em>Modern Java Recipes</em><br/>
+<em>Mockito Made Clear</em><br/>
+<em>Gradle Recipes for Android</em><br/>
+<em>Making Java Groovy</em>
+</div>
 </div>
 
 </div>
@@ -273,13 +277,6 @@ graph TD
     style G fill:#34d399,color:#000,stroke:#34d399
 ```
 
-<v-click>
-
-<div style="padding: 0.6em; background: rgba(251, 191, 36, 0.1); border-radius: 8px; text-align: center; margin-top: 0.5em;">
-<span style="color: #fde68a;">Each box becomes a Java record. The whole hierarchy is immutable and transparent.</span>
-</div>
-
-</v-click>
 
 ---
 background: 'linear-gradient(to bottom right, #1a1a2e, #0f3460)'
